@@ -12,48 +12,63 @@ adding the students to a number of modules and adding a number of modules to a c
 Further on, the program should print out a list of all the courses, their respective modules,
 and all students, their usernames, assigned modules and the course(s) they are registered
 for to the console. 
-* 
-* c = new CourseProgramme("4BCT", new DateTime("2000-01-11"), new DateTime("2004-01-11"), Modules, Students);
-        s = new Student("Naoise Callery", 22, new DateTime("1996-06-09"), 1542, c);
-        m = new Module("CT414", s, c);
-
  */
 
 public class DriverClass {
-    private Student s;
     private Module m;
-    private CourseProgramme c;
-    
-    private ArrayList<CourseProgramme> Courses = new ArrayList<>();
-    private ArrayList<Student> Students = new ArrayList<>();
-    private ArrayList<Module> Modules = new ArrayList<>();
-    
+
     public static void main(String[] args){
     
-        newCourses();
-           
-        newStudents();
- 
-        newModules();
-
+        ArrayList<CourseProgramme> Courses = new ArrayList<>();
+        ArrayList<Student> Students1 = new ArrayList<>();
+        ArrayList<Student> Students2 = new ArrayList<>();
+        ArrayList<Module> Modules1 = new ArrayList<>();
+        ArrayList<Module> Modules2 = new ArrayList<>();
+        
+        CourseProgramme course1 = new CourseProgramme("4BCT", new DateTime("2003-01-11"), new DateTime("2008-01-11"), Modules1, Students1);
+        Courses.add(course1);
+        CourseProgramme course2 = new CourseProgramme("3BCT", new DateTime("2014-01-11"), new DateTime("2009-01-11"), Modules2, Students2);
+        Courses.add(course2);
+        
+        Student s1 = new Student("Mike", 21, new DateTime("1997-05-02"), 1542, course1);
+        Student s2 = new Student("Niall", 29, new DateTime("1989-04-12"), 1543, course1);
+        Students1.add(s1);
+        Students1.add(s2);
+        Student[] stuArr1 = Students1.toArray(new Student[Students1.size()]);
+        course1.setStudents(stuArr1);
+        Student s3 = new Student("Ritchy", 32, new DateTime("1986-06-08"), 1544, course2);
+        Student s4 = new Student("Joel", 28, new DateTime("1990-12-09"), 1545, course2);
+        Students2.add(s3);
+        Students2.add(s4);
+        Student[] stuArr2 = Students2.toArray(new Student[Students2.size()]);
+        course2.setStudents(stuArr2);
+        Students2.add(s1);
+        Students2.add(s2);
+        
+        Module m1 = new Module("Bio414", null, course1);
+        m1.setStudents(stuArr1);
+        Module m2 = new Module("His413", null, course2);
+        m2.setStudents(stuArr2);
+        Modules1.add(m1);
+        Modules1.add(m2);
+        Module[] modArr1 = Modules1.toArray(new Module[Modules1.size()]);
+        Module m3 = new Module("CT415", null, course1);
+        Student[] stuArr3 =  Students2.toArray(new Student[Students2.size()]);
+        m3.setStudents(stuArr3);
+        Module m4 = new Module("GEO517", null, course2);
+        m4.setStudents(stuArr3);
+        Modules2.add(m3);
+        Modules2.add(m4);
+        Module[] modArr2 = Modules2.toArray(new Module[Modules2.size()]);
+        
+        course1.setModules(modArr1);
+        course2.setModules(modArr2);
+        
+        
+       for(int i = 0; i < course1.size(); i++)
+       {
+           print name
+            
        }
-    
-    public void newStudents(){
-        Student stu = new Student(name, age, dob, id, course);
-    }
-    
-    public void newModules(){
-        Module mod = new Module(name, student, course);
-    }
-    
-    public void newCourses() {
-        CourseProgramme course1 = new CourseProgramme("4BCT", new DateTime("2000-01-11"), new DateTime("2004-01-11"), Modules, Students);
-        CourseProgramme course2 = new CourseProgramme("4BCT", new DateTime("2000-01-11"), new DateTime("2004-01-11"), Modules, Students);
-    }
-    
-    public void printResults(){
-        //list of courses
-        //their respective modules
-        //Students for a module + usernames
-    }
+    } 
 }
