@@ -64,11 +64,28 @@ public class DriverClass {
         course1.setModules(modArr1);
         course2.setModules(modArr2);
         
-        
-       for(int i = 0; i < course1.size(); i++)
+        System.out.println("Course:" +course1.getCourseName());
+        Module[] modArr3 = course1.getModules();
+       for(int i = 0; i < modArr3.length; i++)
        {
-           print name
-            
+           System.out.println("Module: "+modArr3[i].getName());
+           stuArr3 = modArr3[i].getStudent();
+           for(int j = 0; j < stuArr3.length; j++)
+           {
+               
+               System.out.println(stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+           }
+       }
+       System.out.println("Course:" +course2.getCourseName());
+        modArr3 = course2.getModules();
+       for(int i = 0; i < modArr3.length; i++)
+       {
+           System.out.println("Module: "+modArr3[i].getName());
+           stuArr3 = modArr3[i].getStudent();
+           for(int j = 0; j < stuArr3.length; j++)
+           {
+               System.out.println(stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+           }
        }
     } 
 }
