@@ -66,25 +66,24 @@ public class DriverClass {
         
         System.out.println("Course:" +course1.getCourseName());
         Module[] modArr3 = course1.getModules();
-       for(int i = 0; i < modArr3.length; i++)
+       for(int i = 0; i < (modArr3.length/2); i++)
        {
            System.out.println("Module: "+modArr3[i].getName());
            stuArr3 = modArr3[i].getStudent();
            for(int j = 0; j < stuArr3.length; j++)
-           {
-               
-               System.out.println(stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+           { 
+               System.out.println("Student:"+stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
            }
        }
-       System.out.println("Course:" +course2.getCourseName());
+       System.out.println("\n Course:" +course2.getCourseName());
         modArr3 = course2.getModules();
-       for(int i = 0; i < modArr3.length; i++)
+       for(int i = 0; i < (modArr3.length/2); i++)
        {
            System.out.println("Module: "+modArr3[i].getName());
            stuArr3 = modArr3[i].getStudent();
            for(int j = 0; j < stuArr3.length; j++)
            {
-               System.out.println(stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+               System.out.println("Student:"+stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
            }
        }
     } 
