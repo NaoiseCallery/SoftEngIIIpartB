@@ -69,10 +69,9 @@ public class DriverClass {
        for(int i = 0; i < (modArr3.length/2); i++)
        {
            System.out.println("Module: "+modArr3[i].getName());
-           stuArr3 = modArr3[i].getStudent();
-           for(int j = 0; j < stuArr3.length; j++)
+           for(int j = 0; j < course1.getStudent().length/2; j++)
            { 
-               System.out.println("Student:"+stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+               System.out.println("Student:"+course1.getStudent()[j].getName()+" Username: "+ course1.getStudent()[j].getUserame());
            }
        }
        System.out.println("\n Course:" +course2.getCourseName());
@@ -80,10 +79,9 @@ public class DriverClass {
        for(int i = 0; i < (modArr3.length/2); i++)
        {
            System.out.println("Module: "+modArr3[i].getName());
-           stuArr3 = modArr3[i].getStudent();
-           for(int j = 0; j < stuArr3.length; j++)
+           for(int j = 1; j < course2.getStudent().length/2; j++)
            {
-               System.out.println("Student:"+stuArr3[j].getName()+" Username: "+ stuArr3[j].getUserame());
+               System.out.println("Student:"+course2.getStudent()[j].getName()+" Username: "+ course2.getStudent()[j].getUserame());
            }
        }
     } 
